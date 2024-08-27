@@ -1,20 +1,19 @@
-import React,{ Componet } from "react";
+import React,{ useState } from "react";
 
-class Counter extend Componet{
-constructor(props){
-    super(props);
-    this.state={counter:0}
+const Counter=()=>{
+const[counter,setCount]=useState(0);
+const incerementCount=()=>{
+   
+   setCount(counter+1);
 }
-incerementCount=()=>{
-    const cont=this.state.counter;
-   this.setSate({counter:cont+1});
-render(){
+
     return (
         <>
-        <p>Button clicked {this.state.counter} times</p>
-        <button onClick={this.incerementCount}>Click me</button>
+        <p>Button clicked {counter} times</p>
+        <button onClick={incerementCount}>Click me</button>
         </>
     )
 }
-}
+
+
 export default Counter;
